@@ -1,3 +1,7 @@
+body {
+    background: url(backgrounImg.jpeg);
+    font-family: 'Open Sans', sans-serif;
+  }
 main {
     width: 80%;
     background-color: whitesmoke;

@@ -25,7 +25,7 @@
                 >
                 <div class="input-group-button">
                     <button 
-                        class="button" 
+                        class="button success" 
                         type="submit"
                     >
                         Add flick
@@ -33,7 +33,15 @@
                 </div>
             </div>
         </form>
-        <ul id="flickList"></ul>
+        <ul id="flickList" class="no-bullet">
+            <li class="flick grid-x">
+                <span class="flickName cell auto">Jupiter Mars Pluto</span>
+                <span class="actions cell shrink">
+                    <button class="button warning">fav</button>
+                    <button class="button">del</button>
+                </span>
+            </li>
+        </ul>
     </main>
     <script src="index.js"></script>
 

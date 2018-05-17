@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tatum Tots</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
 </head>
 <body>
-    <header>
-        <h1>Tatum Tots</h1>
-    </header>
-    <main>
-        <form id="flickForm">
-            <div class="input-group">
-                <input 
-                    type="text" 
-                    class = "input-group-field"
-                    placeholder="Name a movie!"
-                    name="flickName"
-                    autofocus
-                    required
-                >
-                <div class="input-group-button">
-                    <button 
-                        class="button success" 
-                        type="submit"
-                    >
-                        Add flick
-                    </button>
-                </div>
-            </div>
-        </form>
-        <ul id="flickList" class="no-bullet">
-            <li class="flick grid-x">
-                <span class="flickName cell auto">Jupiter Mars Pluto</span>
-                <span class="actions cell shrink">
-                    <button class="button warning">fav</button>
-                    <button class="button">del</button>
-                </span>
-            </li>
-        </ul>
-    </main>
-    <script src="index.js"></script>
+  <header>
+    <h1>Tatum Tots</h1>
+    <img src="tatum.png" alt="">
+  </header>
 
+  <main>
+    <form id="flickForm">
+      <div class="input-group">
+        <input
+          type="text"
+          class="input-group-field"
+          placeholder="Name a flick"
+          name="flickName"
+          autofocus
+          required
+        >
+        <div class="input-group-button">
+          <button
+            class="button success"
+            type="submit"
+          >
+            Add flick
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <ul id="flickList" class="no-bullet">
+      <li class="flick grid-x align-middle">
+        <span class="flickName cell auto">Jupiter Ascending</span>
+        <span class="actions cell shrink">
+          <button class="button warning">fav</button>
+          <button class="button alert">del</button>
+        </span>
+      </li>
+    </ul>
+  </main>
+
+  <script src="index.js"></script>
 </body>
 </html>

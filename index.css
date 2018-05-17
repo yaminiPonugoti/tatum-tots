@@ -1,13 +1,13 @@
 main {
-  width: 80%;
-  background-color: whitesmoke;
-  margin: 1rem auto;
-}
-
-.actions.button{
+    width: 80%;
+    background-color: whitesmoke;
+    margin: 1rem auto;
+  }
+  
+  .actions .button {
     margin-bottom: 0;
-}
-
-.flickName{
+  }
+  
+  .flickName {
     margin: 0 0.75rem;
-}
+  }

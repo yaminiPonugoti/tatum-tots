@@ -1,11 +1,13 @@
-h1 { 
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+
+h1{ 
   font-family: 'WaltographRegular'; 
   font-weight: normal; 
   font-style: normal; 
 }
 body {
     background: url('img.jpg');
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Shadows Into Light', cursive;
   }
 main {
     width: 80%;

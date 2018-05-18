@@ -34,8 +34,7 @@ const app = {
         itemInList.remove()
         for(let i = 0; i < this.flicks.length; i++) {
             if(itemInList.dataset.id === this.flicks[i].id.toString()) {
-                this.flicks.splice(i, 1)
-                break
+                this.flicks.splice(i, 1) //break
             }
         }
     },

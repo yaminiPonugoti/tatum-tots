@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
 h1{ 
   font-family: 'WaltographRegular'; 
@@ -7,11 +7,12 @@ h1{
 }
 body {
     background: url('img.jpg');
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Indie Flower', cursive;
   }
 main {
     width: 80%;
     background-color: whitesmoke;
+    opacity: 0.9;
     margin: 1rem auto;
   }
   

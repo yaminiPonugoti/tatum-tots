@@ -30,8 +30,12 @@ main {
   .fav{
       color: #154dc5f8
   }
-.flick:first-child button.info,
-.flick:last-child button.move-down {
+.flick:first-child button.info{
+  background-color: #ddd;
+  color: #eee;
+  cursor: not-allowed;
+}
+.flick:last-child button.move-down{
   background-color: #ddd;
   color: #eee;
   cursor: not-allowed;

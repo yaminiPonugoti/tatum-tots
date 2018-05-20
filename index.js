@@ -29,6 +29,9 @@ const app = {
         item
             .querySelector('.button.info')
             .addEventListener('click',this.moveFlickUp.bind(this,flick))
+        item
+            .querySelector('.button.move-down')
+            .addEventListener('click',this.moveFlickDown.bind(this,flick))
         return item
     },
 
@@ -36,18 +39,27 @@ const app = {
         const itemInList = ev.target.closest('.flick')
         const index = this.flicks.findIndex((currentFlick, i) => {
             return currentFlick.id === flick.id
-          })
+        })
         if(index>=0){
             this.list.insertBefore(itemInList,itemInList.previousElementSibling)
+            const oldFlick = this.flicks[index-1]
+            this.flicks[index-1]=flick
+            this.flicks[index]=oldFlick
+            console.log(this.flicks)
         }
-        const oldFlick = this.flicks[index-1]
-        this.flicks[index-1]=flick
-        this.flicks[index]=oldFlick
-        console.log(this.flicks)
     },
 
     moveFlickDown(flick,ev){
-
+        const itemInList = ev.target.closest('.flick')
+        const index = this.flicks.findIndex((currentFlick, i) => {
+            return currentFlick.id === flick.id
+        })
+        if(index<this.flicks.length -1){
+            this.list.insertBefore(itemInList.nextElementSibling, itemInList)
+            const nextFlick = this.flicks[index+1]
+            this.flicks[index+1] = flick
+            this.flicks[index] = nextFlick
+        }
     },
 
     deleteFlick(flick,ev){

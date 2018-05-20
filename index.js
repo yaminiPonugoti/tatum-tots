@@ -26,7 +26,28 @@ const app = {
         item
             .querySelector('.button.warning')
             .addEventListener('click',this.favFlick.bind(this,flick))
+        item
+            .querySelector('.button.info')
+            .addEventListener('click',this.moveFlickUp.bind(this,flick))
         return item
+    },
+
+    moveFlickUp(flick,ev){
+        const itemInList = ev.target.closest('.flick')
+        const index = this.flicks.findIndex((currentFlick, i) => {
+            return currentFlick.id === flick.id
+          })
+        if(index>=0){
+            this.list.insertBefore(itemInList,itemInList.previousElementSibling)
+        }
+        const oldFlick = this.flicks[index-1]
+        this.flicks[index-1]=flick
+        this.flicks[index]=oldFlick
+        console.log(this.flicks)
+    },
+
+    moveFlickDown(flick,ev){
+
     },
 
     deleteFlick(flick,ev){

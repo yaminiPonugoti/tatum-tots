@@ -1,5 +1,5 @@
-const app = {
-    init(selectors) {
+class App{
+    constructor(selectors) {
       this.flicks = []
       this.max = 0
       this.list = document.querySelector(selectors.listSelector)
@@ -11,7 +11,7 @@ const app = {
           ev.preventDefault()
           this.handleSubmit(ev)
         })
-    },
+    }
   
     renderListItem(flick) {
         const item = this.template.cloneNode(true)
@@ -22,7 +22,7 @@ const app = {
             .textContent = flick.name
         item
             .querySelector('.delete.button')
-            .addEventListener('click',this.deleteFlick.bind(this,flick))
+            .addEventListener('click',this.deleteFlick.bind(this,item,flick))
         item
             .querySelector('.fav.button')
             .addEventListener('click',this.favFlick.bind(this,flick))
@@ -33,7 +33,7 @@ const app = {
             .querySelector('.button.move-down')
             .addEventListener('click',this.moveFlickDown.bind(this,flick))
         return item
-    },
+    }
 
     moveFlickUp(flick,ev){
         const itemInList = ev.target.closest('.flick')
@@ -47,7 +47,7 @@ const app = {
             this.flicks[index]=oldFlick
             console.log(this.flicks)
         }
-    },
+    }
 
     moveFlickDown(flick,ev){
         const itemInList = ev.target.closest('.flick')
@@ -60,17 +60,20 @@ const app = {
             this.flicks[index+1] = flick
             this.flicks[index] = nextFlick
         }
-    },
+    }
 
-    deleteFlick(flick,ev){
-        const itemInList = ev.target.closest('.flick')
-        itemInList.remove()
-        for(let i = 0; i < this.flicks.length; i++) {
-            if(itemInList.dataset.id === this.flicks[i].id.toString()) {
-                this.flicks.splice(i, 1) //break
-            }
-        }
-    },
+    deleteFlick(item,flick,ev){
+        item.remove() //remove from the DOM
+        const i = this.flicks.indexOf(flick)
+        this.flicks.splice(i,1)
+        // const itemInList = ev.target.closest('.flick')
+        // itemInList.remove()
+        // for(let i = 0; i < this.flicks.length; i++) {
+            // if(itemInList.dataset.id === this.flicks[i].id.toString()) {
+                // this.flicks.splice(i, 1) //break
+            // }
+        // }
+    }
 
     favFlick(flick,ev){
         const itemInList = ev.target.closest('.flick')
@@ -81,7 +84,7 @@ const app = {
             itemInList.classList.remove('fav')
         }
         flick.fav = !flick.fav
-    },
+    }
   
     handleSubmit(ev) {
       const f = ev.target
@@ -97,10 +100,10 @@ const app = {
       this.list.insertBefore(item, this.list.firstElementChild)
   
       f.reset()
-    },
+    }
   }
   
-  app.init({
+  const app = new App({
     formSelector: '#flickForm',
     listSelector: '#flickList',
     templateSelector: '.flick.template',

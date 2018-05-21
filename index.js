@@ -21,10 +21,10 @@ const app = {
             .querySelector('.flickName')
             .textContent = flick.name
         item
-            .querySelector('.button.alert')
+            .querySelector('.delete.button')
             .addEventListener('click',this.deleteFlick.bind(this,flick))
         item
-            .querySelector('.button.warning')
+            .querySelector('.fav.button')
             .addEventListener('click',this.favFlick.bind(this,flick))
         item
             .querySelector('.button.info')

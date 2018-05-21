@@ -25,7 +25,7 @@ class App{
             .addEventListener('click',this.deleteFlick.bind(this,item,flick))
         item
             .querySelector('.fav.button')
-            .addEventListener('click',this.favFlick.bind(this,flick))
+            .addEventListener('click',this.favFlick.bind(this,item,flick))
         item
             .querySelector('.button.info')
             .addEventListener('click',this.moveFlickUp.bind(this,flick))
@@ -75,15 +75,16 @@ class App{
         // }
     }
 
-    favFlick(flick,ev){
-        const itemInList = ev.target.closest('.flick')
-        if(!flick.fav){
-            itemInList.classList.add('fav')
-        }
-        else{
-            itemInList.classList.remove('fav')
-        }
-        flick.fav = !flick.fav
+    favFlick(item,flick,ev){
+        flick.fav = item.classList.toggle('fav')
+        // const listItem = ev.target.closest('.flick')
+        // if(!flick.fav){
+        //     listItem.classList.add('fav')
+        // }
+        // else{
+        //     listItem.classList.remove('fav')
+        // }
+        // flick.fav = !flick.fav
     }
   
     handleSubmit(ev) {

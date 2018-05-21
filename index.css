@@ -27,8 +27,8 @@ main {
   .template{
       display: none;
   }
-  .fav{
-      color: #154dc5f8
+  .flick.fav{
+      color: #436dc7f8
   }
 .flick:first-child button.info{
   background-color: #ddd;
